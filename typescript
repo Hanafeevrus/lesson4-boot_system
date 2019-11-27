@@ -1,0 +1,741 @@
+Script started on 2019-11-28 00:23:56+06:00
+]777;notify;Command completed;exit]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ vagrant ssh
+]0;vagrant@lvm:~[?1034h[vagrant@lvm ~]$ sudo su
+]0;root@lvm:/home/vagrant[?1034h[root@lvm vagrant]# vgs
+  VG         #PV #LV #SN Attr   VSize   VFree
+  VolGroup00   1   2   0 wz--n- <38.97g    0 
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# vgrename VolGroup00 OtusRoot
+  Volume group "VolGroup00" successfully renamed to "OtusRoot"
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# vi /etc/fstab 
+[?1049h[?1h=[1;35r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[35;1H"/etc/fstab" 11L, 481C[2;1H#
+# /etc/fstab
+# Created by anaconda on Sat May 12 18:50:26 2018
+#
+# Accessible filesystems, by reference, are maintained under '/dee[7;1Hv/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) forr[9;1H more info
+#
+/dev/mapper/VolGroup00-LogVol00 /[23Cxfs     dd[12;1Hefaults[8C0 0
+UUID=570897ca-e759-4c81-90cf-389da6eee4cc /boot[17C  [14;1H xfs     defaults[8C0 0
+/dev/mapper/VolGroup00-LogVol01 swap[20Cswap    dd[16;1Hefaults[8C0 0
+[94m~                                                                [18;1H~                                                                [19;1H~                                                                [20;1H~                                                                [21;1H~                                                                [22;1H~                                                                [23;1H~                                                                [24;1H~                                                                [25;1H~                                                                [26;1H~                                                                [27;1H~                                                                [28;1H~                                                                [29;1H~                                                                [30;1H~                                                                [31;1H~                                                                [32;1H~                                                                [33;1H~                                                                [34;1H~                                                                [1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+
+[11;1H[?25l[m[35;1H[1m-- INSERT --[m[35;14H[K[11;1H[?12l[?25h/dev/mapper/V[?25lolGroup00-LogVol00 / [22Cxfs     dee[12;1Hfaults [7C0 0[12;18H[K[11;13H[?12l[?25h[?25llGroup00-LogVol00 / [22Cxfs     deff[12;1Haults [7C0 0[12;17H[K[11;13H[?12l[?25h[?25lGroup00-LogVol00 / [22Cxfs     defaa[12;1Hults [7C0 0[12;16H[K[11;13H[?12l[?25h[?25lroup00-LogVol00 / [22Cxfs     defauu[12;1Hlts [7C0 0[12;15H[K[11;13H[?12l[?25h[?25loup00-LogVol00 / [22Cxfs     defaull[12;1Hts [7C0 0[12;14H[K[11;13H[?12l[?25h[?25lup00-LogVol00 / [22Cxfs     defaultt[12;1Hs [7C0 0[12;13H[K[11;13H[?12l[?25h[?25lp00-LogVol00 / [22Cxfs     defaultss[12;1H [7C0 0[12;12H[K[11;13H[?12l[?25h[?25l00-LogVol00 / [22Cxfs     defaults  [12;1H       0 0[12;11H[K[11;13H[?12l[?25h[?25l0-LogVol00 / [22Cxfs     defaults   [12;1H      0 0[12;10H[K[11;13H[?12l[?25h[35;1H[K[11;12H[?25l[?12l[?25h[?25l[35;1H:[?12l[?25hq![?25l[35;1H[K[35;1H[?1l>[?12l[?25h[?1049l]0;root@lvm:/home/vagrant[root@lvm vagrant]# lsblk
+NAME                  MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                     8:0    0   40G  0 disk 
+├─sda1                  8:1    0    1M  0 part 
+├─sda2                  8:2    0    1G  0 part /boot
+└─sda3                  8:3    0   39G  0 part 
+  ├─OtusRoot-LogVol00 253:0    0 37.5G  0 lvm  /
+  └─OtusRoot-LogVol01 253:1    0  1.5G  0 lvm  [SWAP]
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# vi /etc/fstab 
+[?1049h[?1h=[1;35r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[35;1H"/etc/fstab" 11L, 481C[2;1H#
+# /etc/fstab
+# Created by anaconda on Sat May 12 18:50:26 2018
+#
+# Accessible filesystems, by reference, are maintained under '/dee[7;1Hv/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) forr[9;1H more info
+#
+/dev/mapper/VolGroup00-LogVol00 /[23Cxfs     dd[12;1Hefaults[8C0 0
+UUID=570897ca-e759-4c81-90cf-389da6eee4cc /boot[17C  [14;1H xfs     defaults[8C0 0
+/dev/mapper/VolGroup00-LogVol01 swap[20Cswap    dd[16;1Hefaults[8C0 0
+[94m~                                                                [18;1H~                                                                [19;1H~                                                                [20;1H~                                                                [21;1H~                                                                [22;1H~                                                                [23;1H~                                                                [24;1H~                                                                [25;1H~                                                                [26;1H~                                                                [27;1H~                                                                [28;1H~                                                                [29;1H~                                                                [30;1H~                                                                [31;1H~                                                                [32;1H~                                                                [33;1H~                                                                [34;1H~                                                                [1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+
+
+
+[13;1H[11;1H[?25l[m[35;1H[1m-- INSERT --[m[35;14H[K[11;1H[?12l[?25h/dev/mapper/[?25lolGroup00-LogVol00 / [22Cxfs     dee[12;1Hfaults [7C0 0[12;18H[K[11;13H[?12l[?25h[?25llGroup00-LogVol00 / [22Cxfs     deff[12;1Haults [7C0 0[12;17H[K[11;13H[?12l[?25h[?25lGroup00-LogVol00 / [22Cxfs     defaa[12;1Hults [7C0 0[12;16H[K[11;13H[?12l[?25h[?25lroup00-LogVol00 / [22Cxfs     defauu[12;1Hlts [7C0 0[12;15H[K[11;13H[?12l[?25h[?25loup00-LogVol00 / [22Cxfs     defaull[12;1Hts [7C0 0[12;14H[K[11;13H[?12l[?25h[?25lup00-LogVol00 / [22Cxfs     defaultt[12;1Hs [7C0 0[12;13H[K[11;13H[?12l[?25h[?25lp00-LogVol00 / [22Cxfs     defaultss[12;1H [7C0 0[12;12H[K[11;13H[?12l[?25h[?25l00-LogVol00 / [22Cxfs     defaults  [12;1H       0 0[12;11H[K[11;13H[?12l[?25h[?25l0-LogVol00 / [22Cxfs     defaults   [12;1H      0 0[12;10H[K[11;13H[?12l[?25h[?25l-LogVol00 / [22Cxfs     defaults    [12;1H     0 0[12;9H[K[11;13H[?12l[?25h[?25lO-LogVol00 /[22C xfs     defaults   [12;1H      0 0[11;14H[?12l[?25h[?25lt-LogVol00 /[22C xfs     defaults  [12;1H       0 0[11;15H[?12l[?25h[?25lu-LogVol00 /[22C xfs     defaultss[12;1H        0 0[11;16H[?12l[?25h[?25ls-LogVol00 /[22C xfs     defaultt[12;1Hs[7C 0 0[11;17H[?12l[?25h[?25lR-LogVol00 /[22C xfs     defaull[12;1Hts[7C 0 0[11;18H[?12l[?25h[?25lo-LogVol00 /[22C xfs     defauu[12;1Hlts[7C 0 0[11;19H[?12l[?25h[?25lo-LogVol00 /[22C xfs     defaa[12;1Hults[7C 0 0[11;20H[?12l[?25h[?25lt-LogVol00 /[22C xfs     deff[12;1Haults[7C 0 0[11;21H[?12l[?25h[13;21H[15;19H[?25lolGroup00-LogVol01 swap [19Cswap    dee[16;1Hfaults [7C0 0[16;18H[K[15;13H[?12l[?25h[?25llGroup00-LogVol01 swap [19Cswap    deff[16;1Haults [7C0 0[16;17H[K[15;13H[?12l[?25h[?25lGroup00-LogVol01 swap [19Cswap    defaa[16;1Hults [7C0 0[16;16H[K[15;13H[?12l[?25h[?25lroup00-LogVol01 swap [19Cswap    defauu[16;1Hlts [7C0 0[16;15H[K[15;13H[?12l[?25h[?25loup00-LogVol01 swap [19Cswap    defaull[16;1Hts [7C0 0[16;14H[K[15;13H[?12l[?25h[?25lup00-LogVol01 swap [19Cswap    defaultt[16;1Hs [7C0 0[16;13H[K[15;13H[?12l[?25h[?25lp00-LogVol01 swap [19Cswap    defaultss[16;1H [7C0 0[16;12H[K[15;13H[?12l[?25h[?25l00-LogVol01 swap [19Cswap    defaults  [16;1H       0 0[16;11H[K[15;13H[?12l[?25h[?25l0-LogVol01 swap [19Cswap    defaults   [16;1H      0 0[16;10H[K[15;13H[?12l[?25h[?25l-LogVol01 swap [19Cswap    defaults    [16;1H     0 0[16;9H[K[15;13H[?12l[?25h[?25lO-LogVol01 swap[19C swap    defaults   [16;1H      0 0[15;14H[?12l[?25h[?25lt-LogVol01 swap[19C swap    defaults  [16;1H       0 0[15;15H[?12l[?25h[?25lu-LogVol01 swap[19C swap    defaultss[16;1H        0 0[15;16H[?12l[?25h[?25ls-LogVol01 swap[19C swap    defaultt[16;1Hs[7C 0 0[15;17H[?12l[?25h[?25lR-LogVol01 swap[19C swap    defaull[16;1Hts[7C 0 0[15;18H[?12l[?25h[?25lo-LogVol01 swap[19C swap    defauu[16;1Hlts[7C 0 0[15;19H[?12l[?25h[?25lo-LogVol01 swap[19C swap    defaa[16;1Hults[7C 0 0[15;20H[?12l[?25h[?25lt-LogVol01 swap[19C swap    deff[16;1Haults[7C 0 0[15;21H[?12l[?25h[35;1H[K[15;20H[?25l[?12l[?25h[?25l[35;1H:[?12l[?25hwq[?25l"/etc/fstab" 11L, 477C written
+[?1l>[?12l[?25h[?1049l]0;root@lvm:/home/vagrant[root@lvm vagrant]# vi /etc/fstab [K[K[K[K[K[Kdefault/grub 
+[?1049h[?1h=[1;35r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[35;1H"/etc/default/grub" 7L, 388C[1;1HGRUB_TIMEOUT=1
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"[3;1HGRUB_DEFAULT=saved
+GRUB_DISABLE_SUBMENU=true
+GRUB_TERMINAL_OUTPUT="console"
+GRUB_CMDLINE_LINUX="no_timer_check console=tty0 console=ttyS0,1155[7;1H200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto  [8;1Hrd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb  [9;1Hquiet"
+GRUB_DISABLE_RECOVERY="true"
+[94m~                                                                [12;1H~                                                                [13;1H~                                                                [14;1H~                                                                [15;1H~                                                                [16;1H~                                                                [17;1H~                                                                [18;1H~                                                                [19;1H~                                                                [20;1H~                                                                [21;1H~                                                                [22;1H~                                                                [23;1H~                                                                [24;1H~                                                                [25;1H~                                                                [26;1H~                                                                [27;1H~                                                                [28;1H~                                                                [29;1H~                                                                [30;1H~                                                                [31;1H~                                                                [32;1H~                                                                [33;1H~                                                                [34;1H~                                                                [1;1H[?12l[?25h
+
+
+
+
+[10;1H[6;1H[35C[13C[7;7H[14C[14C[14C
+[30C[mrd.lvm.lv=[?25lolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb qq[9;1Huiet"[9;6H[K[8;11H[?12l[?25h[?25llGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quu[9;1Hiet"[9;5H[K[8;11H[?12l[?25h[?25lGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quii[9;1Het"[9;4H[K[8;11H[?12l[?25h[?25lroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiee[9;1Ht"[9;3H[K[8;11H[?12l[?25h[?25loup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiett[9;1H"[9;2H[K[8;11H[?12l[?25h[?25l[6;34r[34;1H
+[1;35r[6;1HGRUB_CMDLINE_LINUX="no_timer_check console=tty0 console=ttyS0,1155[7;1H200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto  [8;1Hrd.lvm.lv=up00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[34;1H[94m~                                                                [m[35;1H[K[8;11H[?12l[?25h[?25lp00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;65H[K[8;11H[?12l[?25h[?25l00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;64H[K[8;11H[?12l[?25h[?25l0/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;63H[K[8;11H[?12l[?25h[?25l/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;62H[K[8;11H[?12l[?25h[?25l[35;1H[1m-- INSERT --[6;34r[m[6;1H[L[1;35r[6;1H[?12l[?25h[?25lt[?12l[?25h[?25lu[?12l[?25h[?25ls[?12l[?25h[?25lR[?12l[?25h[?25lo[?12l[?25h[?25lo[?12l[?25h[?25lt[?12l[?25h[35;1H[K[6;7H[?25l[?12l[?25h[?25l[35;1H:[?12l[?25hq![?25l[35;1H[K[35;1H[?1l>[?12l[?25h[?1049l]0;root@lvm:/home/vagrant[root@lvm vagrant]# vi /etc/default/grub 
+[?1049h[?1h=[1;35r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[35;1H"/etc/default/grub" 7L, 388C[1;1HGRUB_TIMEOUT=1
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"[3;1HGRUB_DEFAULT=saved
+GRUB_DISABLE_SUBMENU=true
+GRUB_TERMINAL_OUTPUT="console"
+GRUB_CMDLINE_LINUX="no_timer_check console=tty0 console=ttyS0,1155[7;1H200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto  [8;1Hrd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb  [9;1Hquiet"
+GRUB_DISABLE_RECOVERY="true"
+[94m~                                                                [12;1H~                                                                [13;1H~                                                                [14;1H~                                                                [15;1H~                                                                [16;1H~                                                                [17;1H~                                                                [18;1H~                                                                [19;1H~                                                                [20;1H~                                                                [21;1H~                                                                [22;1H~                                                                [23;1H~                                                                [24;1H~                                                                [25;1H~                                                                [26;1H~                                                                [27;1H~                                                                [28;1H~                                                                [29;1H~                                                                [30;1H~                                                                [31;1H~                                                                [32;1H~                                                                [33;1H~                                                                [34;1H~                                                                [1;1H[?12l[?25h
+
+
+
+
+[10;1H[6;1H[mGRUB_CMDL[26C[13C[7;7H[14C[14C[14C
+rd.lvm.lv=[?25l[35;1H[1m-- INSERT --[m[35;13H[K[8;11H[?12l[?25h[?25lolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb qq[9;1Huiet"[9;6H[K[8;11H[?12l[?25h[?25llGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quu[9;1Hiet"[9;5H[K[8;11H[?12l[?25h[?25lGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quii[9;1Het"[9;4H[K[8;11H[?12l[?25h[?25lroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiee[9;1Ht"[9;3H[K[8;11H[?12l[?25h[?25loup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiett[9;1H"[9;2H[K[8;11H[?12l[?25h[?25l[6;34r[34;1H
+[1;35r[6;1HGRUB_CMDLINE_LINUX="no_timer_check console=tty0 console=ttyS0,1155[7;1H200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto  [8;1Hrd.lvm.lv=up00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[34;1H[94m~                                                                [8;11H[?12l[?25h[?25l[mp00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;65H[K[8;11H[?12l[?25h[?25l00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;64H[K[8;11H[?12l[?25h[?25l0/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;63H[K[8;11H[?12l[?25h[?25l/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;62H[K[8;11H[?12l[?25h[?25lO/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;12H[?12l[?25h[?25lt/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;13H[?12l[?25h[?25lu/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;14H[?12l[?25h[?25ls/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;15H[?12l[?25h[?25l[9;34r[9;1H[L[1;35r[8;15HR/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiett[9;1H"[8;16H[?12l[?25h[?25lo/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiee[9;1Ht"[8;17H[?12l[?25h[?25lo/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quii[9;1Het"[8;18H[?12l[?25h[?25lt/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quu[9;1Hiet"[8;19H[?12l[?25h/LogVol00 rd.lvm.lv=[?25lolGroup00/LogVol01 rhgb quii[9;1Het"[9;4H[K[8;39H[?12l[?25h[?25llGroup00/LogVol01 rhgb quiee[9;1Ht"[9;3H[K[8;39H[?12l[?25h[?25lGroup00/LogVol01 rhgb quiett[9;1H"[9;2H[K[8;39H[?12l[?25h[?25l[6;34r[34;1H
+[1;35r[6;1HGRUB_CMDLINE_LINUX="no_timer_check console=tty0 console=ttyS0,1155[7;1H200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto  [8;1Hrd.lvm.lv=OtusRoot/LogVol00 rd.lvm.lv=roup00/LogVol01 rhgb quiet"[34;1H[94m~                                                                [8;39H[?12l[?25h[?25l[moup00/LogVol01 rhgb quiet"[8;65H[K[8;39H[?12l[?25h[?25lup00/LogVol01 rhgb quiet"[8;64H[K[8;39H[?12l[?25h[?25lp00/LogVol01 rhgb quiet"[8;63H[K[8;39H[?12l[?25h[?25l00/LogVol01 rhgb quiet"[8;62H[K[8;39H[?12l[?25h[?25l0/LogVol01 rhgb quiet"[8;61H[K[8;39H[?12l[?25h[?25l/LogVol01 rhgb quiet"[8;60H[K[8;39H[?12l[?25h[?25lO/LogVol01 rhgb quiet"[8;40H[?12l[?25h[?25lt/LogVol01 rhgb quiet"[8;41H[?12l[?25h[?25lu/LogVol01 rhgb quiet"[8;42H[?12l[?25h[?25ls/LogVol01 rhgb quiet"[8;43H[?12l[?25h[?25lR/LogVol01 rhgb quiet"[8;44H[?12l[?25h[?25lo/LogVol01 rhgb quiet"[8;45H[?12l[?25h[?25l[9;34r[9;1H[L[1;35r[8;45Ho/LogVol01 rhgb quiett[9;1H"[8;46H[?12l[?25h[?25lt/LogVol01 rhgb quiee[9;1Ht"[8;47H[?12l[?25h[35;1H[K[8;46H[?25l[?12l[?25h[?25l[35;1H:[?12l[?25hwq[?25l"/etc/default/grub" 7L, 384C written
+[?1l>[?12l[?25h[?1049l]0;root@lvm:/home/vagrant[root@lvm vagrant]# vi /etc/default/grub [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K/boot/grub2/grub.cfg 
+[?1049h[?1h=[1;35r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[35;1H"/boot/grub2/grub.cfg" 127L, 3607C[1;1H#
+# DO NOT EDIT THIS FILE
+#
+# It is automatically generated by grub2-mkconfig using templates[5;1H# from /etc/grub.d and settings from /etc/default/grub
+#
+
+### BEGIN /etc/grub.d/00_header ###
+set pager=1
+
+if [ -s $prefix/grubenv ]; then
+  load_env
+fi
+if [ "${next_entry}" ] ; then
+   set default="${next_entry}"
+   set next_entry=
+   save_env next_entry
+   set boot_once=true
+else
+   set default="${saved_entry}"
+fi
+
+if [ x"${feature_menuentry_id}" = xy ]; then
+  menuentry_id_option="--id"
+else
+  menuentry_id_option=""
+fi
+
+export menuentry_id_option
+
+if [ "${prev_saved_entry}" ]; then
+  set saved_entry="${prev_saved_entry}"
+  save_env saved_entry
+  set prev_saved_entry=[1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[?25l[1;34r[34;1H
+[1;35r[34;3Hsave_env prev_saved_entry[35;1H[K[34;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hset boot_once=true[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hfi[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hfunction savedefault {[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hif [ -z "${boot_once}" ]; then[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hsaved_entry="${chosen}"[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hsave_env saved_entry[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hfi[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H}[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hfunction load_video {[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hif [ x$feature_all_video_module = xy ]; then[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hinsmod all_video[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Helse[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hinsmod efi_gop[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hinsmod efi_uga[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hinsmod ieee1275_fb[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hinsmod vbe[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hinsmod vga[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hinsmod video_bochs[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hinsmod video_cirrus[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hfi[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H}[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hterminal_output console[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hif [ x$feature_timeout_style = xy ] ; then[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hset timeout_style=menu[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hset timeout=1[?12l[?25h[?25l[1;34r[1;1H[2M[1;35r[33;1H# Fallback normal timeout code in case the timeout_style feature  [34;1His[33;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H# unavailable.[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Helse[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hset timeout=1[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hfi[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### END /etc/grub.d/00_header ###[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### BEGIN /etc/grub.d/00_tuned ###[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hset tuned_params=""[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hset tuned_initrd=""[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### END /etc/grub.d/00_tuned ###[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### BEGIN /etc/grub.d/01_users ###[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hif [ -f ${prefix}/user.cfg ]; then[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hsource ${prefix}/user.cfg[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hif [ -n "${GRUB2_PASSWORD}" ]; then[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hset superusers="root"[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hexport superusers[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hpassword_pbkdf2 root ${GRUB2_PASSWORD}[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hfi[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hfi[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### END /etc/grub.d/01_users ###[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### BEGIN /etc/grub.d/10_linux ###[?12l[?25h[?25l[1;34r[1;1H[4M[1;35r[31;1Hmenuentry 'CentOS Linux (3.10.0-862.2.3.el7.x86_64) 7 (Core)' --cc[32;1Hlass centos --class gnu-linux --class gnu --class os --unrestrictt[33;1Hed $menuentry_id_option 'gnulinux-3.10.0-862.2.3.el7.x86_64-advann[34;1Hced-b60e9498-0baa-4d9f-90aa-069048217fee' {[31;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;9Hload_video[34;8H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;9Hset gfxpayload=keep[34;8H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;9Hinsmod gzio[34;8H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;9Hinsmod part_msdos[34;8H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;9Hinsmod xfs[34;8H[?12l[?25h[?25l[1;34r[1;1H[2M[1;35r[33;9Hset root='hd0,msdos2'[34;9Hif [ x$feature_platform_search_hint = xy ]; then[33;8H[?12l[?25h[34;8H[?25l[1;34r[1;1H[2M[1;35r[33;11Hsearch --no-floppy --fs-uuid --set=root --hint='hd0,msdd[34;1Hos2'  570897ca-e759-4c81-90cf-389da6eee4cc[33;8H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;9Helse[?12l[?25h[?25l[1;34r[1;1H[2M[1;35r[33;11Hsearch --no-floppy --fs-uuid --set=root 570897ca-e759-44[34;1Hc81-90cf-389da6eee4cc[33;8H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;9Hfi[?12l[?25h[?25l[1;34r[1;1H[5M[1;35r[30;9Hlinux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mappp[31;1Her/VolGroup00-LogVol00 ro no_timer_check console=tty0 console=ttyy[32;1HS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernell[33;1H=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol011[34;1H rhgb quiet[30;8H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;9Hinitrd16 /initramfs-3.10.0-862.2.3.el7.x86_64.img[34;8H[?12l[?25h[29;8H [8C[35C[30;24H[?25l[35;1H[1m-- INSERT --[30;11H[?12l[?25h[mp00[?25l-LogVol00 ro no_timer_check console=tty0 console=ttySS[31;1H0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel==[32;1Hauto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01  [33;1Hrhgb quiet [30;13H[?12l[?25h[?25l-LogVol00 ro no_timer_check console=tty0 console=ttyS00[31;1H,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=aa[32;1Huto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rr[33;1Hhgb quiet [30;12H[?12l[?25h[?25l-LogVol00 ro no_timer_check console=tty0 console=ttyS0,,[31;1H115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auu[32;1Hto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhh[33;1Hgb quiet [30;11H[?12l[?25h[?25l-LogVol00 ro no_timer_check console=tty0 console=ttyS0,11[31;1H15200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=autt[32;1Ho rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgg[33;1Hb quiet [30;10H[?12l[?25h[?25l-LogVol00 ro no_timer_check console=tty0 console=ttyS0,111[31;1H5200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=autoo[32;1H rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgbb[33;1H quiet [30;9H[?12l[?25h[?25l-LogVol00 ro no_timer_check console=tty0 console=ttyS0,1155[31;1H200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto  [32;1Hrd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb  [33;1Hquiet [30;8H[?12l[?25h[?25l-LogVol00 ro no_timer_check console=tty0 console=ttyS0,11522[31;1H00n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rr[32;1Hd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb qq[33;1Huiet [30;7H[?12l[?25h[?25l-LogVol00 ro no_timer_check console=tty0 console=ttyS0,115200[31;1H0n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rdd[32;1H.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quu[33;1Hiet [30;6H[?12l[?25h[?25l-LogVol00 ro no_timer_check console=tty0 console=ttyS0,1152000[31;1Hn8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rd..[32;1Hlvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quii[33;1Het [30;5H[?12l[?25h[?25l-LogVol00 ro no_timer_check console=tty0 console=ttyS0,115200nn[31;1H8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rd.ll[32;1Hvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiee[33;1Ht [30;4H[?12l[?25h[?25lO-LogVol00 ro no_timer_check console=tty0 console=ttyS0,1152000[31;1Hn8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rd..[32;1Hlvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quii[33;1Het[30;5H[?12l[?25h[?25lt-LogVol00 ro no_timer_check console=tty0 console=ttyS0,115200[31;1H0n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rdd[32;1H.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quu[33;1Hiet[30;6H[?12l[?25h[?25lu-LogVol00 ro no_timer_check console=tty0 console=ttyS0,11522[31;1H00n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rr[32;1Hd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb qq[33;1Huiet[30;7H[?12l[?25h[?25ls-LogVol00 ro no_timer_check console=tty0 console=ttyS0,1155[31;1H200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto  [32;1Hrd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb  [33;1Hquiet[30;8H[?12l[?25h[?25lR-LogVol00 ro no_timer_check console=tty0 console=ttyS0,111[31;1H5200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=autoo[32;1H rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgbb[33;1H quiet[30;9H[?12l[?25h[?25lo-LogVol00 ro no_timer_check console=tty0 console=ttyS0,11[31;1H15200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=autt[32;1Ho rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgg[33;1Hb quiet[30;10H[?12l[?25h[?25lo-LogVol00 ro no_timer_check console=tty0 console=ttyS0,,[31;1H115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auu[32;1Hto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhh[33;1Hgb quiet[30;11H[?12l[?25h[?25lt-LogVol00 ro no_timer_check console=tty0 console=ttyS00[31;1H,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=aa[32;1Huto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rr[33;1Hhgb quiet[30;12H[?12l[?25h-LogVol00 ro no_[12C[7C=tty0 [7C=
+,[9Cnet.[7C=0 [11C=0 [8C=noop [11C=
+uto rd.lvm.lv=[?25lolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhh[33;1Hgb quiet [32;15H[?12l[?25h[?25llGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgg[33;1Hb quiet [32;15H[?12l[?25h[?25lGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgbb[33;1H quiet [32;15H[?12l[?25h[?25lroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb  [33;1Hquiet [32;15H[?12l[?25h[?25loup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb qq[33;1Huiet [32;15H[?12l[?25h[?25lup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quu[33;1Hiet [32;15H[?12l[?25h[?25lp00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quii[33;1Het [32;15H[?12l[?25h[?25l00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiee[33;1Ht [32;15H[?12l[?25h[?25l0/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiett[33;1H [32;15H[?12l[?25h[?25l[29;34r[34;1H
+[1;35r[29;1H        linux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mappp[30;1Her/OtusRoot-LogVol00 ro no_timer_check console=tty0 console=ttyS00[31;1H,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=aa[32;1Huto rd.lvm.lv=/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet
+
+}[32;15H[?12l[?25h[?25lO/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiett[33;1H [33;9H[K[34;1H [7Cinitrd16 /initramfs-3.10.0-862.2.3.el7.x86_64.img[32;16H[?12l[?25h[?25lt/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiee[33;1Ht[32;17H[?12l[?25h[?25lu/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quii[33;1Het[32;18H[?12l[?25h[?25ls/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quu[33;1Hiet[32;19H[?12l[?25h[?25lR/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb qq[33;1Huiet[32;20H[?12l[?25h[?25lo/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb  [33;1Hquiet[32;21H[?12l[?25h[?25lo/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgbb[33;1H quiet[32;22H[?12l[?25h[?25lt/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgg[33;1Hb quiet[32;23H[?12l[?25h/LogVol00 rd.lvm.lv=[?25lolGroup00/LogVol01 rhgbb[33;1H quiet [32;43H[?12l[?25h[?25llGroup00/LogVol01 rhgb  [33;1Hquiet [32;43H[?12l[?25h[?25lGroup00/LogVol01 rhgb qq[33;1Huiet [32;43H[?12l[?25h[?25lroup00/LogVol01 rhgb quu[33;1Hiet [32;43H[?12l[?25h[?25loup00/LogVol01 rhgb quii[33;1Het [32;43H[?12l[?25h[?25lup00/LogVol01 rhgb quiee[33;1Ht [32;43H[?12l[?25h[?25lp00/LogVol01 rhgb quiett[33;1H [32;43H[?12l[?25h[?25l[29;34r[34;1H
+[1;35r[29;1H        linux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mappp[30;1Her/OtusRoot-LogVol00 ro no_timer_check console=tty0 console=ttyS00[31;1H,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=aa[32;1Huto rd.lvm.lv=OtusRoot/LogVol00 rd.lvm.lv=00/LogVol01 rhgb quiet
+
+}[32;43H[?12l[?25h[?25l0/LogVol01 rhgb quiet [32;43H[?12l[?25h[?25l/LogVol01 rhgb quiet [32;43H[?12l[?25h[?25lO/LogVol01 rhgb quiet[32;44H[?12l[?25h[?25lt/LogVol01 rhgb quiet[32;45H[?12l[?25h[?25lu/LogVol01 rhgb quiett[33;1H [33;9H[K[34;1H [7Cinitrd16 /initramfs-3.10.0-862.2.3.el7.x86_64.img[32;46H[?12l[?25h[?25ls/LogVol01 rhgb quiee[33;1Ht[32;47H[?12l[?25h[?25lR/LogVol01 rhgb quii[33;1Het[32;48H[?12l[?25h[?25lo/LogVol01 rhgb quu[33;1Hiet[32;49H[?12l[?25h[?25lo/LogVol01 rhgb qq[33;1Huiet[32;50H[?12l[?25h[?25lt/LogVol01 rhgb  [33;1Hquiet[32;51H[?12l[?25h[35;1H[K[32;50H[?25l[?12l[?25h[34;57H[?25l[1;34r[34;1H
+[1;35r[34;1H}[?12l[?25h[?25l[1;34r[1;1H[3M[1;35r[32;1Hif [ "x$default" = 'CentOS Linux (3.10.0-862.2.3.el7.x86_64) 7 (CC[33;1Hore)' ]; then default='Advanced options for CentOS Linux>CentOS LL[34;1Hinux (3.10.0-862.2.3.el7.x86_64) 7 (Core)'; fi;[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### END /etc/grub.d/10_linux ###[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### BEGIN /etc/grub.d/20_linux_xen ###[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### END /etc/grub.d/20_linux_xen ###[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### BEGIN /etc/grub.d/20_ppc_terminfo ###[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### END /etc/grub.d/20_ppc_terminfo ###[?12l[?25h[?25l[1;34r[1;1H[4M[1;35r[32;1H### BEGIN /etc/grub.d/30_os-prober ###
+### END /etc/grub.d/30_os-prober ###[31;1H[?12l[?25h[32;38H[33;36H
+[?25l[1;34r[34;1H
+[1;35r[34;1H### BEGIN /etc/grub.d/40_custom ###[?12l[?25h[?25l[1;34r[1;1H[2M[1;35r[33;1H# This file provides an easy way to add custom menu entries.  Simm[34;1Hply type the[?12l[?25h[?25l[1;34r[1;1H[2M[1;35r[33;1H# menu entries you want to add after this comment.  Be careful noo[34;1Ht to change[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H# the 'exec tail' line above.[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### END /etc/grub.d/40_custom ###[?12l[?25h[?25l[1;34r[1;1H[2M[1;35r[34;1H### BEGIN /etc/grub.d/41_custom ###[33;1H[?12l[?25h[34;35H[?25l[1;34r[34;1H
+[1;35r[34;1Hif [ -f  ${config_directory}/custom.cfg ]; then[?12l[?25h[?25l[1;34r[1;1H[2M[1;35r[33;3Hsource ${config_directory}/custom.cfg
+elif [ -z "${config_directory}" -a -f  $prefix/custom.cfg ]; then[33;39H[?12l[?25h[34;65H[?25l[1;34r[34;1H
+[1;35r[34;3Hsource $prefix/custom.cfg;[?12l[?25h[?25l[1;34r[1;1H[5M[1;35r[30;1Hfi
+### END /etc/grub.d/41_custom ###
+[94m~                                                                [33;1H~                                                                [34;1H~                                                                [30;2H[?12l[?25h[31;33H[?25l[35;1H[m:[?12l[?25hwq[?25l"/boot/grub2/grub.cfg" 127L, 3601C written
+[?1l>[?12l[?25h[?1049l]0;root@lvm:/home/vagrant[root@lvm vagrant]# mkinitrd -f -v /boot/initramfs-$(uname -r).im g $(uname -r)
+Executing: /sbin/dracut -f -v /boot/initramfs-3.10.0-862.2.3.el7.x86_64.img 3.10.0-862.2.3.el7.x86_64
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+*** Including module: bash ***
+*** Including module: nss-softokn ***
+*** Including module: i18n ***
+*** Including module: drm ***
+*** Including module: plymouth ***
+*** Including module: dm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 60-persistent-storage-dm.rules
+Skipping udev rule: 55-dm.rules
+*** Including module: kernel-modules ***
+Omitting driver floppy
+*** Including module: lvm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 56-lvm.rules
+Skipping udev rule: 60-persistent-storage-lvm.rules
+*** Including module: qemu ***
+*** Including module: resume ***
+*** Including module: rootfs-block ***
+*** Including module: terminfo ***
+*** Including module: udev-rules ***
+Skipping udev rule: 40-redhat-cpu-hotplug.rules
+Skipping udev rule: 91-permissions.rules
+*** Including module: biosdevname ***
+*** Including module: systemd ***
+*** Including module: usrmount ***
+*** Including module: base ***
+*** Including module: fs-lib ***
+*** Including module: shutdown ***
+*** Including modules done ***
+*** Installing kernel module dependencies and firmware ***
+*** Installing kernel module dependencies and firmware done ***
+*** Resolving executable dependencies ***
+*** Resolving executable dependencies done***
+*** Hardlinking files ***
+*** Hardlinking files done ***
+*** Stripping files ***
+*** Stripping files done ***
+*** Generating early-microcode cpio image contents ***
+*** No early-microcode cpio image needed ***
+*** Store current command line parameters ***
+*** Creating image file ***
+*** Creating image file done ***
+*** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# lsblk
+NAME                  MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                     8:0    0   40G  0 disk 
+├─sda1                  8:1    0    1M  0 part 
+├─sda2                  8:2    0    1G  0 part /boot
+└─sda3                  8:3    0   39G  0 part 
+  ├─OtusRoot-LogVol00 253:0    0 37.5G  0 lvm  /
+  └─OtusRoot-LogVol01 253:1    0  1.5G  0 lvm  [SWAP]
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# reboot
+Connection to 127.0.0.1 closed by remote host.
+Connection to 127.0.0.1 closed.
+]777;notify;Command completed;vagrant ssh]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ vagrant stst[K[Katus
+[0mCurrent machine states:
+
+lvm                       running (virtualbox)
+
+The VM is running. To stop this VM, you can run `vagrant halt` to
+shut it down forcefully, or you can run `vagrant suspend` to simply
+suspend the virtual machine. In either case, to restart it again,
+simply run `vagrant up`.[0m
+]777;notify;Command completed;vagrant status]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ vagrant status[K[K[K[K[Ksh
+^C]777;notify;Command completed;vagrant ssh]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ exit
+exit
+
+Script done on 2019-11-28 00:31:09+06:00
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           lvm:  
+    lvm:   Verifying  : 1:smartmontools-7.0-1.el7.x86_64                             1/6[0m
+[0;32m    lvm:  
+    lvm:   Verifying  : libreport-filesystem-2.1.11-43.el7.centos.x86_64             2/6[0m
+[0;32m    lvm:  
+    lvm:   Verifying  : mdadm-4.1-1.el7.x86_64                                       3/6[0m
+[0;32m    lvm:  
+    lvm:   Verifying  : gdisk-0.8.10-3.el7.x86_64                                    4/6[0m
+[0;32m    lvm:  
+    lvm:   Verifying  : mailx-12.5-19.el7.x86_64                                     5/6[0m
+[0;32m    lvm:  
+    lvm:   Verifying  : hdparm-9.43-5.el7.x86_64                                     6/6[0m
+[0;32m    lvm:  
+    lvm: 
+    lvm: Installed:
+    lvm:   gdisk.x86_64 0:0.8.10-3.el7          hdparm.x86_64 0:9.43-5.el7               
+    lvm:   mdadm.x86_64 0:4.1-1.el7             smartmontools.x86_64 1:7.0-1.el7         
+    lvm: 
+    lvm: Dependency Installed:
+    lvm:   libreport-filesystem.x86_64 0:2.1.11-43.el7.centos mailx.x86_64 0:12.5-19.el7
+    lvm: 
+    lvm: Complete![0m
+]777;notify;Command completed;vagrant up]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ script
+Script started, file is typescript
+]777;notify;Command completed;exit]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ vagrant ssh
+]0;vagrant@lvm:~[?1034h[vagrant@lvm ~]$ sudo su
+]0;root@lvm:/home/vagrant[?1034h[root@lvm vagrant]# vgs
+  VG         #PV #LV #SN Attr   VSize   VFree
+  VolGroup00   1   2   0 wz--n- <38.97g    0 
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# vgrename VolGroup00 OtusRoot
+  Volume group "VolGroup00" successfully renamed to "OtusRoot"
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# vi /etc/fstab 
+[?1049h[?1h=[1;35r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[35;1H"/etc/fstab" 11L, 481C[2;1H#
+# /etc/fstab
+# Created by anaconda on Sat May 12 18:50:26 2018
+#
+# Accessible filesystems, by reference, are maintained under '/dee[7;1Hv/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) forr[9;1H more info
+#
+/dev/mapper/VolGroup00-LogVol00 /[23Cxfs     dd[12;1Hefaults[8C0 0
+UUID=570897ca-e759-4c81-90cf-389da6eee4cc /boot[17C  [14;1H xfs     defaults[8C0 0
+/dev/mapper/VolGroup00-LogVol01 swap[20Cswap    dd[16;1Hefaults[8C0 0
+[94m~                                                                [18;1H~                                                                [19;1H~                                                                [20;1H~                                                                [21;1H~                                                                [22;1H~                                                                [23;1H~                                                                [24;1H~                                                                [25;1H~                                                                [26;1H~                                                                [27;1H~                                                                [28;1H~                                                                [29;1H~                                                                [30;1H~                                                                [31;1H~                                                                [32;1H~                                                                [33;1H~                                                                [34;1H~                                                                [1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+
+[11;1H[?25l[m[35;1H[1m-- INSERT --[m[35;14H[K[11;1H[?12l[?25h/dev/mapper/V[?25lolGroup00-LogVol00 / [22Cxfs     dee[12;1Hfaults [7C0 0[12;18H[K[11;13H[?12l[?25h[?25llGroup00-LogVol00 / [22Cxfs     deff[12;1Haults [7C0 0[12;17H[K[11;13H[?12l[?25h[?25lGroup00-LogVol00 / [22Cxfs     defaa[12;1Hults [7C0 0[12;16H[K[11;13H[?12l[?25h[?25lroup00-LogVol00 / [22Cxfs     defauu[12;1Hlts [7C0 0[12;15H[K[11;13H[?12l[?25h[?25loup00-LogVol00 / [22Cxfs     defaull[12;1Hts [7C0 0[12;14H[K[11;13H[?12l[?25h[?25lup00-LogVol00 / [22Cxfs     defaultt[12;1Hs [7C0 0[12;13H[K[11;13H[?12l[?25h[?25lp00-LogVol00 / [22Cxfs     defaultss[12;1H [7C0 0[12;12H[K[11;13H[?12l[?25h[?25l00-LogVol00 / [22Cxfs     defaults  [12;1H       0 0[12;11H[K[11;13H[?12l[?25h[?25l0-LogVol00 / [22Cxfs     defaults   [12;1H      0 0[12;10H[K[11;13H[?12l[?25h[35;1H[K[11;12H[?25l[?12l[?25h[?25l[35;1H:[?12l[?25hq![?25l[35;1H[K[35;1H[?1l>[?12l[?25h[?1049l]0;root@lvm:/home/vagrant[root@lvm vagrant]# lsblk
+NAME                  MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                     8:0    0   40G  0 disk 
+├─sda1                  8:1    0    1M  0 part 
+├─sda2                  8:2    0    1G  0 part /boot
+└─sda3                  8:3    0   39G  0 part 
+  ├─OtusRoot-LogVol00 253:0    0 37.5G  0 lvm  /
+  └─OtusRoot-LogVol01 253:1    0  1.5G  0 lvm  [SWAP]
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# vi /etc/fstab 
+[?1049h[?1h=[1;35r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[35;1H"/etc/fstab" 11L, 481C[2;1H#
+# /etc/fstab
+# Created by anaconda on Sat May 12 18:50:26 2018
+#
+# Accessible filesystems, by reference, are maintained under '/dee[7;1Hv/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) forr[9;1H more info
+#
+/dev/mapper/VolGroup00-LogVol00 /[23Cxfs     dd[12;1Hefaults[8C0 0
+UUID=570897ca-e759-4c81-90cf-389da6eee4cc /boot[17C  [14;1H xfs     defaults[8C0 0
+/dev/mapper/VolGroup00-LogVol01 swap[20Cswap    dd[16;1Hefaults[8C0 0
+[94m~                                                                [18;1H~                                                                [19;1H~                                                                [20;1H~                                                                [21;1H~                                                                [22;1H~                                                                [23;1H~                                                                [24;1H~                                                                [25;1H~                                                                [26;1H~                                                                [27;1H~                                                                [28;1H~                                                                [29;1H~                                                                [30;1H~                                                                [31;1H~                                                                [32;1H~                                                                [33;1H~                                                                [34;1H~                                                                [1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+
+
+
+[13;1H[11;1H[?25l[m[35;1H[1m-- INSERT --[m[35;14H[K[11;1H[?12l[?25h/dev/mapper/[?25lolGroup00-LogVol00 / [22Cxfs     dee[12;1Hfaults [7C0 0[12;18H[K[11;13H[?12l[?25h[?25llGroup00-LogVol00 / [22Cxfs     deff[12;1Haults [7C0 0[12;17H[K[11;13H[?12l[?25h[?25lGroup00-LogVol00 / [22Cxfs     defaa[12;1Hults [7C0 0[12;16H[K[11;13H[?12l[?25h[?25lroup00-LogVol00 / [22Cxfs     defauu[12;1Hlts [7C0 0[12;15H[K[11;13H[?12l[?25h[?25loup00-LogVol00 / [22Cxfs     defaull[12;1Hts [7C0 0[12;14H[K[11;13H[?12l[?25h[?25lup00-LogVol00 / [22Cxfs     defaultt[12;1Hs [7C0 0[12;13H[K[11;13H[?12l[?25h[?25lp00-LogVol00 / [22Cxfs     defaultss[12;1H [7C0 0[12;12H[K[11;13H[?12l[?25h[?25l00-LogVol00 / [22Cxfs     defaults  [12;1H       0 0[12;11H[K[11;13H[?12l[?25h[?25l0-LogVol00 / [22Cxfs     defaults   [12;1H      0 0[12;10H[K[11;13H[?12l[?25h[?25l-LogVol00 / [22Cxfs     defaults    [12;1H     0 0[12;9H[K[11;13H[?12l[?25h[?25lO-LogVol00 /[22C xfs     defaults   [12;1H      0 0[11;14H[?12l[?25h[?25lt-LogVol00 /[22C xfs     defaults  [12;1H       0 0[11;15H[?12l[?25h[?25lu-LogVol00 /[22C xfs     defaultss[12;1H        0 0[11;16H[?12l[?25h[?25ls-LogVol00 /[22C xfs     defaultt[12;1Hs[7C 0 0[11;17H[?12l[?25h[?25lR-LogVol00 /[22C xfs     defaull[12;1Hts[7C 0 0[11;18H[?12l[?25h[?25lo-LogVol00 /[22C xfs     defauu[12;1Hlts[7C 0 0[11;19H[?12l[?25h[?25lo-LogVol00 /[22C xfs     defaa[12;1Hults[7C 0 0[11;20H[?12l[?25h[?25lt-LogVol00 /[22C xfs     deff[12;1Haults[7C 0 0[11;21H[?12l[?25h[13;21H[15;19H[?25lolGroup00-LogVol01 swap [19Cswap    dee[16;1Hfaults [7C0 0[16;18H[K[15;13H[?12l[?25h[?25llGroup00-LogVol01 swap [19Cswap    deff[16;1Haults [7C0 0[16;17H[K[15;13H[?12l[?25h[?25lGroup00-LogVol01 swap [19Cswap    defaa[16;1Hults [7C0 0[16;16H[K[15;13H[?12l[?25h[?25lroup00-LogVol01 swap [19Cswap    defauu[16;1Hlts [7C0 0[16;15H[K[15;13H[?12l[?25h[?25loup00-LogVol01 swap [19Cswap    defaull[16;1Hts [7C0 0[16;14H[K[15;13H[?12l[?25h[?25lup00-LogVol01 swap [19Cswap    defaultt[16;1Hs [7C0 0[16;13H[K[15;13H[?12l[?25h[?25lp00-LogVol01 swap [19Cswap    defaultss[16;1H [7C0 0[16;12H[K[15;13H[?12l[?25h[?25l00-LogVol01 swap [19Cswap    defaults  [16;1H       0 0[16;11H[K[15;13H[?12l[?25h[?25l0-LogVol01 swap [19Cswap    defaults   [16;1H      0 0[16;10H[K[15;13H[?12l[?25h[?25l-LogVol01 swap [19Cswap    defaults    [16;1H     0 0[16;9H[K[15;13H[?12l[?25h[?25lO-LogVol01 swap[19C swap    defaults   [16;1H      0 0[15;14H[?12l[?25h[?25lt-LogVol01 swap[19C swap    defaults  [16;1H       0 0[15;15H[?12l[?25h[?25lu-LogVol01 swap[19C swap    defaultss[16;1H        0 0[15;16H[?12l[?25h[?25ls-LogVol01 swap[19C swap    defaultt[16;1Hs[7C 0 0[15;17H[?12l[?25h[?25lR-LogVol01 swap[19C swap    defaull[16;1Hts[7C 0 0[15;18H[?12l[?25h[?25lo-LogVol01 swap[19C swap    defauu[16;1Hlts[7C 0 0[15;19H[?12l[?25h[?25lo-LogVol01 swap[19C swap    defaa[16;1Hults[7C 0 0[15;20H[?12l[?25h[?25lt-LogVol01 swap[19C swap    deff[16;1Haults[7C 0 0[15;21H[?12l[?25h[35;1H[K[15;20H[?25l[?12l[?25h[?25l[35;1H:[?12l[?25hwq[?25l"/etc/fstab" 11L, 477C written
+[?1l>[?12l[?25h[?1049l]0;root@lvm:/home/vagrant[root@lvm vagrant]# vi /etc/fstab [K[K[K[K[K[Kdefault/grub 
+[?1049h[?1h=[1;35r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[35;1H"/etc/default/grub" 7L, 388C[1;1HGRUB_TIMEOUT=1
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"[3;1HGRUB_DEFAULT=saved
+GRUB_DISABLE_SUBMENU=true
+GRUB_TERMINAL_OUTPUT="console"
+GRUB_CMDLINE_LINUX="no_timer_check console=tty0 console=ttyS0,1155[7;1H200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto  [8;1Hrd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb  [9;1Hquiet"
+GRUB_DISABLE_RECOVERY="true"
+[94m~                                                                [12;1H~                                                                [13;1H~                                                                [14;1H~                                                                [15;1H~                                                                [16;1H~                                                                [17;1H~                                                                [18;1H~                                                                [19;1H~                                                                [20;1H~                                                                [21;1H~                                                                [22;1H~                                                                [23;1H~                                                                [24;1H~                                                                [25;1H~                                                                [26;1H~                                                                [27;1H~                                                                [28;1H~                                                                [29;1H~                                                                [30;1H~                                                                [31;1H~                                                                [32;1H~                                                                [33;1H~                                                                [34;1H~                                                                [1;1H[?12l[?25h
+
+
+
+
+[10;1H[6;1H[35C[13C[7;7H[14C[14C[14C
+[30C[mrd.lvm.lv=[?25lolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb qq[9;1Huiet"[9;6H[K[8;11H[?12l[?25h[?25llGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quu[9;1Hiet"[9;5H[K[8;11H[?12l[?25h[?25lGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quii[9;1Het"[9;4H[K[8;11H[?12l[?25h[?25lroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiee[9;1Ht"[9;3H[K[8;11H[?12l[?25h[?25loup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiett[9;1H"[9;2H[K[8;11H[?12l[?25h[?25l[6;34r[34;1H
+[1;35r[6;1HGRUB_CMDLINE_LINUX="no_timer_check console=tty0 console=ttyS0,1155[7;1H200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto  [8;1Hrd.lvm.lv=up00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[34;1H[94m~                                                                [m[35;1H[K[8;11H[?12l[?25h[?25lp00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;65H[K[8;11H[?12l[?25h[?25l00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;64H[K[8;11H[?12l[?25h[?25l0/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;63H[K[8;11H[?12l[?25h[?25l/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;62H[K[8;11H[?12l[?25h[?25l[35;1H[1m-- INSERT --[6;34r[m[6;1H[L[1;35r[6;1H[?12l[?25h[?25lt[?12l[?25h[?25lu[?12l[?25h[?25ls[?12l[?25h[?25lR[?12l[?25h[?25lo[?12l[?25h[?25lo[?12l[?25h[?25lt[?12l[?25h[35;1H[K[6;7H[?25l[?12l[?25h[?25l[35;1H:[?12l[?25hq![?25l[35;1H[K[35;1H[?1l>[?12l[?25h[?1049l]0;root@lvm:/home/vagrant[root@lvm vagrant]# vi /etc/default/grub 
+[?1049h[?1h=[1;35r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[35;1H"/etc/default/grub" 7L, 388C[1;1HGRUB_TIMEOUT=1
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"[3;1HGRUB_DEFAULT=saved
+GRUB_DISABLE_SUBMENU=true
+GRUB_TERMINAL_OUTPUT="console"
+GRUB_CMDLINE_LINUX="no_timer_check console=tty0 console=ttyS0,1155[7;1H200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto  [8;1Hrd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb  [9;1Hquiet"
+GRUB_DISABLE_RECOVERY="true"
+[94m~                                                                [12;1H~                                                                [13;1H~                                                                [14;1H~                                                                [15;1H~                                                                [16;1H~                                                                [17;1H~                                                                [18;1H~                                                                [19;1H~                                                                [20;1H~                                                                [21;1H~                                                                [22;1H~                                                                [23;1H~                                                                [24;1H~                                                                [25;1H~                                                                [26;1H~                                                                [27;1H~                                                                [28;1H~                                                                [29;1H~                                                                [30;1H~                                                                [31;1H~                                                                [32;1H~                                                                [33;1H~                                                                [34;1H~                                                                [1;1H[?12l[?25h
+
+
+
+
+[10;1H[6;1H[mGRUB_CMDL[26C[13C[7;7H[14C[14C[14C
+rd.lvm.lv=[?25l[35;1H[1m-- INSERT --[m[35;13H[K[8;11H[?12l[?25h[?25lolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb qq[9;1Huiet"[9;6H[K[8;11H[?12l[?25h[?25llGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quu[9;1Hiet"[9;5H[K[8;11H[?12l[?25h[?25lGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quii[9;1Het"[9;4H[K[8;11H[?12l[?25h[?25lroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiee[9;1Ht"[9;3H[K[8;11H[?12l[?25h[?25loup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiett[9;1H"[9;2H[K[8;11H[?12l[?25h[?25l[6;34r[34;1H
+[1;35r[6;1HGRUB_CMDLINE_LINUX="no_timer_check console=tty0 console=ttyS0,1155[7;1H200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto  [8;1Hrd.lvm.lv=up00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[34;1H[94m~                                                                [8;11H[?12l[?25h[?25l[mp00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;65H[K[8;11H[?12l[?25h[?25l00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;64H[K[8;11H[?12l[?25h[?25l0/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;63H[K[8;11H[?12l[?25h[?25l/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;62H[K[8;11H[?12l[?25h[?25lO/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;12H[?12l[?25h[?25lt/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;13H[?12l[?25h[?25lu/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;14H[?12l[?25h[?25ls/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet"[8;15H[?12l[?25h[?25l[9;34r[9;1H[L[1;35r[8;15HR/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiett[9;1H"[8;16H[?12l[?25h[?25lo/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiee[9;1Ht"[8;17H[?12l[?25h[?25lo/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quii[9;1Het"[8;18H[?12l[?25h[?25lt/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quu[9;1Hiet"[8;19H[?12l[?25h/LogVol00 rd.lvm.lv=[?25lolGroup00/LogVol01 rhgb quii[9;1Het"[9;4H[K[8;39H[?12l[?25h[?25llGroup00/LogVol01 rhgb quiee[9;1Ht"[9;3H[K[8;39H[?12l[?25h[?25lGroup00/LogVol01 rhgb quiett[9;1H"[9;2H[K[8;39H[?12l[?25h[?25l[6;34r[34;1H
+[1;35r[6;1HGRUB_CMDLINE_LINUX="no_timer_check console=tty0 console=ttyS0,1155[7;1H200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto  [8;1Hrd.lvm.lv=OtusRoot/LogVol00 rd.lvm.lv=roup00/LogVol01 rhgb quiet"[34;1H[94m~                                                                [8;39H[?12l[?25h[?25l[moup00/LogVol01 rhgb quiet"[8;65H[K[8;39H[?12l[?25h[?25lup00/LogVol01 rhgb quiet"[8;64H[K[8;39H[?12l[?25h[?25lp00/LogVol01 rhgb quiet"[8;63H[K[8;39H[?12l[?25h[?25l00/LogVol01 rhgb quiet"[8;62H[K[8;39H[?12l[?25h[?25l0/LogVol01 rhgb quiet"[8;61H[K[8;39H[?12l[?25h[?25l/LogVol01 rhgb quiet"[8;60H[K[8;39H[?12l[?25h[?25lO/LogVol01 rhgb quiet"[8;40H[?12l[?25h[?25lt/LogVol01 rhgb quiet"[8;41H[?12l[?25h[?25lu/LogVol01 rhgb quiet"[8;42H[?12l[?25h[?25ls/LogVol01 rhgb quiet"[8;43H[?12l[?25h[?25lR/LogVol01 rhgb quiet"[8;44H[?12l[?25h[?25lo/LogVol01 rhgb quiet"[8;45H[?12l[?25h[?25l[9;34r[9;1H[L[1;35r[8;45Ho/LogVol01 rhgb quiett[9;1H"[8;46H[?12l[?25h[?25lt/LogVol01 rhgb quiee[9;1Ht"[8;47H[?12l[?25h[35;1H[K[8;46H[?25l[?12l[?25h[?25l[35;1H:[?12l[?25hwq[?25l"/etc/default/grub" 7L, 384C written
+[?1l>[?12l[?25h[?1049l]0;root@lvm:/home/vagrant[root@lvm vagrant]# vi /etc/default/grub [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K/boot/grub2/grub.cfg 
+[?1049h[?1h=[1;35r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[35;1H"/boot/grub2/grub.cfg" 127L, 3607C[1;1H#
+# DO NOT EDIT THIS FILE
+#
+# It is automatically generated by grub2-mkconfig using templates[5;1H# from /etc/grub.d and settings from /etc/default/grub
+#
+
+### BEGIN /etc/grub.d/00_header ###
+set pager=1
+
+if [ -s $prefix/grubenv ]; then
+  load_env
+fi
+if [ "${next_entry}" ] ; then
+   set default="${next_entry}"
+   set next_entry=
+   save_env next_entry
+   set boot_once=true
+else
+   set default="${saved_entry}"
+fi
+
+if [ x"${feature_menuentry_id}" = xy ]; then
+  menuentry_id_option="--id"
+else
+  menuentry_id_option=""
+fi
+
+export menuentry_id_option
+
+if [ "${prev_saved_entry}" ]; then
+  set saved_entry="${prev_saved_entry}"
+  save_env saved_entry
+  set prev_saved_entry=[1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[?25l[1;34r[34;1H
+[1;35r[34;3Hsave_env prev_saved_entry[35;1H[K[34;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hset boot_once=true[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hfi[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hfunction savedefault {[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hif [ -z "${boot_once}" ]; then[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hsaved_entry="${chosen}"[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hsave_env saved_entry[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hfi[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H}[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hfunction load_video {[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hif [ x$feature_all_video_module = xy ]; then[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hinsmod all_video[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Helse[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hinsmod efi_gop[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hinsmod efi_uga[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hinsmod ieee1275_fb[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hinsmod vbe[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hinsmod vga[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hinsmod video_bochs[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hinsmod video_cirrus[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hfi[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H}[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hterminal_output console[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hif [ x$feature_timeout_style = xy ] ; then[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hset timeout_style=menu[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hset timeout=1[?12l[?25h[?25l[1;34r[1;1H[2M[1;35r[33;1H# Fallback normal timeout code in case the timeout_style feature  [34;1His[33;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H# unavailable.[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Helse[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hset timeout=1[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hfi[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### END /etc/grub.d/00_header ###[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### BEGIN /etc/grub.d/00_tuned ###[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hset tuned_params=""[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hset tuned_initrd=""[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### END /etc/grub.d/00_tuned ###[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### BEGIN /etc/grub.d/01_users ###[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hif [ -f ${prefix}/user.cfg ]; then[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hsource ${prefix}/user.cfg[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hif [ -n "${GRUB2_PASSWORD}" ]; then[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hset superusers="root"[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hexport superusers[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;5Hpassword_pbkdf2 root ${GRUB2_PASSWORD}[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;3Hfi[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1Hfi[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### END /etc/grub.d/01_users ###[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### BEGIN /etc/grub.d/10_linux ###[?12l[?25h[?25l[1;34r[1;1H[4M[1;35r[31;1Hmenuentry 'CentOS Linux (3.10.0-862.2.3.el7.x86_64) 7 (Core)' --cc[32;1Hlass centos --class gnu-linux --class gnu --class os --unrestrictt[33;1Hed $menuentry_id_option 'gnulinux-3.10.0-862.2.3.el7.x86_64-advann[34;1Hced-b60e9498-0baa-4d9f-90aa-069048217fee' {[31;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;9Hload_video[34;8H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;9Hset gfxpayload=keep[34;8H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;9Hinsmod gzio[34;8H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;9Hinsmod part_msdos[34;8H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;9Hinsmod xfs[34;8H[?12l[?25h[?25l[1;34r[1;1H[2M[1;35r[33;9Hset root='hd0,msdos2'[34;9Hif [ x$feature_platform_search_hint = xy ]; then[33;8H[?12l[?25h[34;8H[?25l[1;34r[1;1H[2M[1;35r[33;11Hsearch --no-floppy --fs-uuid --set=root --hint='hd0,msdd[34;1Hos2'  570897ca-e759-4c81-90cf-389da6eee4cc[33;8H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;9Helse[?12l[?25h[?25l[1;34r[1;1H[2M[1;35r[33;11Hsearch --no-floppy --fs-uuid --set=root 570897ca-e759-44[34;1Hc81-90cf-389da6eee4cc[33;8H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;9Hfi[?12l[?25h[?25l[1;34r[1;1H[5M[1;35r[30;9Hlinux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mappp[31;1Her/VolGroup00-LogVol00 ro no_timer_check console=tty0 console=ttyy[32;1HS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernell[33;1H=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol011[34;1H rhgb quiet[30;8H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;9Hinitrd16 /initramfs-3.10.0-862.2.3.el7.x86_64.img[34;8H[?12l[?25h[29;8H [8C[35C[30;24H[?25l[35;1H[1m-- INSERT --[30;11H[?12l[?25h[mp00[?25l-LogVol00 ro no_timer_check console=tty0 console=ttySS[31;1H0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel==[32;1Hauto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01  [33;1Hrhgb quiet [30;13H[?12l[?25h[?25l-LogVol00 ro no_timer_check console=tty0 console=ttyS00[31;1H,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=aa[32;1Huto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rr[33;1Hhgb quiet [30;12H[?12l[?25h[?25l-LogVol00 ro no_timer_check console=tty0 console=ttyS0,,[31;1H115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auu[32;1Hto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhh[33;1Hgb quiet [30;11H[?12l[?25h[?25l-LogVol00 ro no_timer_check console=tty0 console=ttyS0,11[31;1H15200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=autt[32;1Ho rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgg[33;1Hb quiet [30;10H[?12l[?25h[?25l-LogVol00 ro no_timer_check console=tty0 console=ttyS0,111[31;1H5200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=autoo[32;1H rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgbb[33;1H quiet [30;9H[?12l[?25h[?25l-LogVol00 ro no_timer_check console=tty0 console=ttyS0,1155[31;1H200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto  [32;1Hrd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb  [33;1Hquiet [30;8H[?12l[?25h[?25l-LogVol00 ro no_timer_check console=tty0 console=ttyS0,11522[31;1H00n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rr[32;1Hd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb qq[33;1Huiet [30;7H[?12l[?25h[?25l-LogVol00 ro no_timer_check console=tty0 console=ttyS0,115200[31;1H0n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rdd[32;1H.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quu[33;1Hiet [30;6H[?12l[?25h[?25l-LogVol00 ro no_timer_check console=tty0 console=ttyS0,1152000[31;1Hn8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rd..[32;1Hlvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quii[33;1Het [30;5H[?12l[?25h[?25l-LogVol00 ro no_timer_check console=tty0 console=ttyS0,115200nn[31;1H8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rd.ll[32;1Hvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiee[33;1Ht [30;4H[?12l[?25h[?25lO-LogVol00 ro no_timer_check console=tty0 console=ttyS0,1152000[31;1Hn8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rd..[32;1Hlvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quii[33;1Het[30;5H[?12l[?25h[?25lt-LogVol00 ro no_timer_check console=tty0 console=ttyS0,115200[31;1H0n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rdd[32;1H.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quu[33;1Hiet[30;6H[?12l[?25h[?25lu-LogVol00 ro no_timer_check console=tty0 console=ttyS0,11522[31;1H00n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rr[32;1Hd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb qq[33;1Huiet[30;7H[?12l[?25h[?25ls-LogVol00 ro no_timer_check console=tty0 console=ttyS0,1155[31;1H200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto  [32;1Hrd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb  [33;1Hquiet[30;8H[?12l[?25h[?25lR-LogVol00 ro no_timer_check console=tty0 console=ttyS0,111[31;1H5200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=autoo[32;1H rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgbb[33;1H quiet[30;9H[?12l[?25h[?25lo-LogVol00 ro no_timer_check console=tty0 console=ttyS0,11[31;1H15200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=autt[32;1Ho rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgg[33;1Hb quiet[30;10H[?12l[?25h[?25lo-LogVol00 ro no_timer_check console=tty0 console=ttyS0,,[31;1H115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auu[32;1Hto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhh[33;1Hgb quiet[30;11H[?12l[?25h[?25lt-LogVol00 ro no_timer_check console=tty0 console=ttyS00[31;1H,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=aa[32;1Huto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rr[33;1Hhgb quiet[30;12H[?12l[?25h-LogVol00 ro no_[12C[7C=tty0 [7C=
+,[9Cnet.[7C=0 [11C=0 [8C=noop [11C=
+uto rd.lvm.lv=[?25lolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhh[33;1Hgb quiet [32;15H[?12l[?25h[?25llGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgg[33;1Hb quiet [32;15H[?12l[?25h[?25lGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgbb[33;1H quiet [32;15H[?12l[?25h[?25lroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb  [33;1Hquiet [32;15H[?12l[?25h[?25loup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb qq[33;1Huiet [32;15H[?12l[?25h[?25lup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quu[33;1Hiet [32;15H[?12l[?25h[?25lp00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quii[33;1Het [32;15H[?12l[?25h[?25l00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiee[33;1Ht [32;15H[?12l[?25h[?25l0/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiett[33;1H [32;15H[?12l[?25h[?25l[29;34r[34;1H
+[1;35r[29;1H        linux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mappp[30;1Her/OtusRoot-LogVol00 ro no_timer_check console=tty0 console=ttyS00[31;1H,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=aa[32;1Huto rd.lvm.lv=/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet
+
+}[32;15H[?12l[?25h[?25lO/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiett[33;1H [33;9H[K[34;1H [7Cinitrd16 /initramfs-3.10.0-862.2.3.el7.x86_64.img[32;16H[?12l[?25h[?25lt/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiee[33;1Ht[32;17H[?12l[?25h[?25lu/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quii[33;1Het[32;18H[?12l[?25h[?25ls/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quu[33;1Hiet[32;19H[?12l[?25h[?25lR/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb qq[33;1Huiet[32;20H[?12l[?25h[?25lo/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb  [33;1Hquiet[32;21H[?12l[?25h[?25lo/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgbb[33;1H quiet[32;22H[?12l[?25h[?25lt/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgg[33;1Hb quiet[32;23H[?12l[?25h/LogVol00 rd.lvm.lv=[?25lolGroup00/LogVol01 rhgbb[33;1H quiet [32;43H[?12l[?25h[?25llGroup00/LogVol01 rhgb  [33;1Hquiet [32;43H[?12l[?25h[?25lGroup00/LogVol01 rhgb qq[33;1Huiet [32;43H[?12l[?25h[?25lroup00/LogVol01 rhgb quu[33;1Hiet [32;43H[?12l[?25h[?25loup00/LogVol01 rhgb quii[33;1Het [32;43H[?12l[?25h[?25lup00/LogVol01 rhgb quiee[33;1Ht [32;43H[?12l[?25h[?25lp00/LogVol01 rhgb quiett[33;1H [32;43H[?12l[?25h[?25l[29;34r[34;1H
+[1;35r[29;1H        linux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mappp[30;1Her/OtusRoot-LogVol00 ro no_timer_check console=tty0 console=ttyS00[31;1H,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=aa[32;1Huto rd.lvm.lv=OtusRoot/LogVol00 rd.lvm.lv=00/LogVol01 rhgb quiet
+
+}[32;43H[?12l[?25h[?25l0/LogVol01 rhgb quiet [32;43H[?12l[?25h[?25l/LogVol01 rhgb quiet [32;43H[?12l[?25h[?25lO/LogVol01 rhgb quiet[32;44H[?12l[?25h[?25lt/LogVol01 rhgb quiet[32;45H[?12l[?25h[?25lu/LogVol01 rhgb quiett[33;1H [33;9H[K[34;1H [7Cinitrd16 /initramfs-3.10.0-862.2.3.el7.x86_64.img[32;46H[?12l[?25h[?25ls/LogVol01 rhgb quiee[33;1Ht[32;47H[?12l[?25h[?25lR/LogVol01 rhgb quii[33;1Het[32;48H[?12l[?25h[?25lo/LogVol01 rhgb quu[33;1Hiet[32;49H[?12l[?25h[?25lo/LogVol01 rhgb qq[33;1Huiet[32;50H[?12l[?25h[?25lt/LogVol01 rhgb  [33;1Hquiet[32;51H[?12l[?25h[35;1H[K[32;50H[?25l[?12l[?25h[34;57H[?25l[1;34r[34;1H
+[1;35r[34;1H}[?12l[?25h[?25l[1;34r[1;1H[3M[1;35r[32;1Hif [ "x$default" = 'CentOS Linux (3.10.0-862.2.3.el7.x86_64) 7 (CC[33;1Hore)' ]; then default='Advanced options for CentOS Linux>CentOS LL[34;1Hinux (3.10.0-862.2.3.el7.x86_64) 7 (Core)'; fi;[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### END /etc/grub.d/10_linux ###[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### BEGIN /etc/grub.d/20_linux_xen ###[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### END /etc/grub.d/20_linux_xen ###[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### BEGIN /etc/grub.d/20_ppc_terminfo ###[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### END /etc/grub.d/20_ppc_terminfo ###[?12l[?25h[?25l[1;34r[1;1H[4M[1;35r[32;1H### BEGIN /etc/grub.d/30_os-prober ###
+### END /etc/grub.d/30_os-prober ###[31;1H[?12l[?25h[32;38H[33;36H
+[?25l[1;34r[34;1H
+[1;35r[34;1H### BEGIN /etc/grub.d/40_custom ###[?12l[?25h[?25l[1;34r[1;1H[2M[1;35r[33;1H# This file provides an easy way to add custom menu entries.  Simm[34;1Hply type the[?12l[?25h[?25l[1;34r[1;1H[2M[1;35r[33;1H# menu entries you want to add after this comment.  Be careful noo[34;1Ht to change[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H# the 'exec tail' line above.[?12l[?25h[?25l[1;34r[34;1H
+[1;35r[34;1H### END /etc/grub.d/40_custom ###[?12l[?25h[?25l[1;34r[1;1H[2M[1;35r[34;1H### BEGIN /etc/grub.d/41_custom ###[33;1H[?12l[?25h[34;35H[?25l[1;34r[34;1H
+[1;35r[34;1Hif [ -f  ${config_directory}/custom.cfg ]; then[?12l[?25h[?25l[1;34r[1;1H[2M[1;35r[33;3Hsource ${config_directory}/custom.cfg
+elif [ -z "${config_directory}" -a -f  $prefix/custom.cfg ]; then[33;39H[?12l[?25h[34;65H[?25l[1;34r[34;1H
+[1;35r[34;3Hsource $prefix/custom.cfg;[?12l[?25h[?25l[1;34r[1;1H[5M[1;35r[30;1Hfi
+### END /etc/grub.d/41_custom ###
+[94m~                                                                [33;1H~                                                                [34;1H~                                                                [30;2H[?12l[?25h[31;33H[?25l[35;1H[m:[?12l[?25hwq[?25l"/boot/grub2/grub.cfg" 127L, 3601C written
+[?1l>[?12l[?25h[?1049l]0;root@lvm:/home/vagrant[root@lvm vagrant]# mkinitrd -f -v /boot/initramfs-$(uname -r).im g $(uname -r)
+Executing: /sbin/dracut -f -v /boot/initramfs-3.10.0-862.2.3.el7.x86_64.img 3.10.0-862.2.3.el7.x86_64
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+*** Including module: bash ***
+*** Including module: nss-softokn ***
+*** Including module: i18n ***
+*** Including module: drm ***
+*** Including module: plymouth ***
+*** Including module: dm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 60-persistent-storage-dm.rules
+Skipping udev rule: 55-dm.rules
+*** Including module: kernel-modules ***
+Omitting driver floppy
+*** Including module: lvm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 56-lvm.rules
+Skipping udev rule: 60-persistent-storage-lvm.rules
+*** Including module: qemu ***
+*** Including module: resume ***
+*** Including module: rootfs-block ***
+*** Including module: terminfo ***
+*** Including module: udev-rules ***
+Skipping udev rule: 40-redhat-cpu-hotplug.rules
+Skipping udev rule: 91-permissions.rules
+*** Including module: biosdevname ***
+*** Including module: systemd ***
+*** Including module: usrmount ***
+*** Including module: base ***
+*** Including module: fs-lib ***
+*** Including module: shutdown ***
+*** Including modules done ***
+*** Installing kernel module dependencies and firmware ***
+*** Installing kernel module dependencies and firmware done ***
+*** Resolving executable dependencies ***
+*** Resolving executable dependencies done***
+*** Hardlinking files ***
+*** Hardlinking files done ***
+*** Stripping files ***
+*** Stripping files done ***
+*** Generating early-microcode cpio image contents ***
+*** No early-microcode cpio image needed ***
+*** Store current command line parameters ***
+*** Creating image file ***
+*** Creating image file done ***
+*** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# lsblk
+NAME                  MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                     8:0    0   40G  0 disk 
+├─sda1                  8:1    0    1M  0 part 
+├─sda2                  8:2    0    1G  0 part /boot
+└─sda3                  8:3    0   39G  0 part 
+  ├─OtusRoot-LogVol00 253:0    0 37.5G  0 lvm  /
+  └─OtusRoot-LogVol01 253:1    0  1.5G  0 lvm  [SWAP]
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# reboot
+Connection to 127.0.0.1 closed by remote host.
+Connection to 127.0.0.1 closed.
+]777;notify;Command completed;vagrant ssh]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ vagrant stst[K[Katus
+[0mCurrent machine states:
+
+lvm                       running (virtualbox)
+
+The VM is running. To stop this VM, you can run `vagrant halt` to
+shut it down forcefully, or you can run `vagrant suspend` to simply
+suspend the virtual machine. In either case, to restart it again,
+simply run `vagrant up`.[0m
+]777;notify;Command completed;vagrant status]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ vagrant status[K[K[K[K[Ksh
+^C]777;notify;Command completed;vagrant ssh]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ exit
+exit
+Script done, file is typescript
+]777;notify;Command completed;script]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ more sc[K[K[Kt[K t
+test.sh     typescript  
+[rhanafeev@localhost lesson4-boot_system]$ more typescript 
+Script started on 2019-11-28 00:23:56+06:00
+]777;notify;Command completed;exit]0;rhanafeev@localhost:~/otus/l
+esson4/lesson4-boot_system]7;file://localhost.localdomain/home/rh
+anafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost less
+on4-boot_system]$ vagrant ssh
+]0;vagrant@lvm:~[?1034h[vagrant@lvm ~]$ sudo su
+]0;root@lvm:/home/vagrant[?1034h[root@lvm vagrant]# vgs
+  VG         #PV #LV #SN Attr   VSize   VFree
+  VolGroup00   1   2   0 wz--n- <38.97g    0 
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# vgrename VolGroup00 
+OtusRoot
+  Volume group "VolGroup00" successfully renamed to "OtusRoot"
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# vi /etc/fstab 
+[?1049h[?1h=[1;35r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[35;1H"/etc/f
+stab" 11L, 481C[2;1H#
+# /etc/fstab
+# Created by anaconda on Sat May 12 18:50:26 2018
+#
+# Accessible filesystems, by reference, are maintained under '/de
+e[7;1Hv/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for
+r[9;1H more info
+#
+/dev/mapper/VolGroup00-LogVol00 /[23Cxfs     dd[12;1Hefaults[8C0 
+0
+UUID=570897ca-e759-4c81-90cf-389da6eee4cc /boot[17C  [14;1H xfs  
+   defaults[8C0 0
+/dev/mapper/VolGroup00-LogVol01 swap[20Cswap    dd[16;1Hefaults[8
+C0 0
+[94m~                                                            
+    [18;1H~                                                      
+          [19;1H~                                                
+                [20;1H~                                          
+                      [21;1H~                                    
+[7m--More--(1%)[27m                            [22;1H~                              
+[7m--More--(1%)[27m                                  [23;1H~                        
+[7m--More--(1%)[27m[K]777;notify;Command completed;more typescript ]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ more typescript :[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kscriptvagrant updestroy[4Pssh[7Pexitvagrant ssh[7Pexitvagrant sshgit push -u origin mastter [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccommit -m 'add sh' [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpull[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd /home/rhanafeev/otuss/lesson4/lesson4-boot_system/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[4Psudo vi grub2.cfg 
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[5P[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd /etc/ls[Kvi grub2.cfg [5@sudo [C[C[C[C[C[C[C[C[C[C[C[C[Ccd /home/rhanafeev/otuss/lesson4/lesson4-boot_system/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[14Pgit pull
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccommit -m 'add sh' [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpush -u origin mastter [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[11Pvagrant ssh
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pexitvagrant ssh[7Pexitvagrant sshdestroyup[K[4Pscript[Kscriptvagrant updestroy[4Pssh[7Pexitvagrant ssh[7Pexitvagrant sshgit push -u origin mastter [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccommit -m 'add sh' [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpull[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd /home/rhanafeev/otuss/lesson4/lesson4-boot_system/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[4Psudo vi grub2.cfg 
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[5P[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd /etc/ls[Kvi grub2.cfg [5@sudo [C[C[C[C[C[C[C[C[C[C[C[C[Ccd /home/rhanafeev/otuss/lesson4/lesson4-boot_system/[A[C[C[C[C[C[C[C[C[C[C[C[C[C[14Pgit pull
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccommit -m 'add sh' [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpush -u origin mastter [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[11Pvagrant ssh
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pexitvagrant ssh[7Pexitvagrant sshdestroyup[K[4Pscript[K[K[rhanafeev@localhost lesson4-boot_system]$ scriptvagrant updestroy[4Pssh[7Pexitvagrant ssh[7Pexitvagrant sshgit push -u origin master [4Pcommit -m 'add sh'pull[Kcd /home/rhanafeev/otus/lesson4/lesson4-boot_system/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[34Psudo vi grub2.cfg [5P[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd /etc/vi grub ls[Ksudo cd /etc/[5Pvi grub ls[Kcd /etc/default/[6Pvagrant updestroygit push origin master [3@-u [C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Pvi README.MD[C[3Pgit statuspush -u origin master status[Kpush -u origin master status[Kpush -u origin master status[Kvi README.MD [13@git push -u origin master[C[3P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8Pvagrant destroyup[Kcd /etc/default/ls[Kvi grub sudo cd /etc/ls[Kvi grub cd /etc/ls[Kvi grub2.cfg [5@sudo [C[C[C[C[C[C[C[C[C[C[C[C[Ccd /home/rhanafeev/otus/lesson4/lesson4-boot_system/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit pull[Kcommit -m 'add sh'push -u origin master [15Pvagrant ssh[7Pexitvagrant ssh[7Pexitvagrant sshdestroyup[K[4Pscript[K^C
+]777;notify;Command completed;* ]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ ^C
+]777;notify;Command completed;* ]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ ^C
+]777;notify;Command completed;* ]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ ^C
+]777;notify;Command completed;* ]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ 
+]777;notify;Command completed;* ]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ 
+]777;notify;Command completed;* ]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ 
+]777;notify;Command completed;* ]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ 
+]777;notify;Command completed;* ]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ 
+]777;notify;Command completed;* ]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ ;'x;cv.aofna;nanioabfoniav'noi[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kquit
+bash: quit: command not found...
+Similar command is: 'quot'
+]777;notify;Command completed;quit]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ exit
+exit
+
+Script done on 2019-11-28 00:32:26+06:00
