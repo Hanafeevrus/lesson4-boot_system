@@ -1,0 +1,13 @@
+Script started on 2019-11-30 09:02:11+06:00
+]777;notify;Command completed;exit]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ vagrant ssh
+Last login: Sat Nov 30 02:53:43 2019 from 10.0.2.2
+]0;vagrant@lvm:~[?1034h[vagrant@lvm ~]$ sudo vgs
+  VG       #PV #LV #SN Attr   VSize   VFree
+  OtusRoot   1   2   0 wz--n- <38.97g    0 
+]0;vagrant@lvm:~[vagrant@lvm ~]$ exit
+logout
+Connection to 127.0.0.1 closed.
+]777;notify;Command completed;vagrant ssh]0;rhanafeev@localhost:~/otus/lesson4/lesson4-boot_system]7;file://localhost.localdomain/home/rhanafeev/otus/lesson4/lesson4-boot_system[rhanafeev@localhost lesson4-boot_system]$ exit
+exit
+
+Script done on 2019-11-30 09:02:34+06:00
