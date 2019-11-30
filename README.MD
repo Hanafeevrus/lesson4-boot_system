@@ -19,8 +19,19 @@
    - изменяем `ro` на `rw` 
    
    #### Установить систему с LVM и переименовать VG
+   * Проверяем состояние системы командой `vgs`  
+   VG       #PV #LV #SN Attr   VSize   VFree  
+   VolGroup00   1   2   0 wz--n- <38.97g    0  
+   * переименовываем VolGroup  
+   vgrename VolGroup00 OtusRoot  
+   далее меняем значения в файлах `/etc/fstab` `/etc/default/grub` `/boot/grub2/grub.cfg`  
+   выполняем  
+   `mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)`  
+   * перезагружаемся и проверяем `vgs`  
+   VG       #PV #LV #SN Attr   VSize   VFree  
+   OtusRoot   1   2   0 wz--n- <38.97g    0
    
-   
+     
    #### добавление модуля в загрузку
    создаем папку `/usr/lib/dracut/modules.d/01test` с файлами `test.sh` и `modules-setup.sh`  
    Пересобираем образ initrd  
